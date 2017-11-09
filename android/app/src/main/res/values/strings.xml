@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2016 Google Inc.
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+  -->
+
+<resources>
+    <string name="app_name">quic-demo</string>
+    <string name="storage_permission_denied">Permission to access storage was denied</string>
+    <string name="load_images">LOAD</string>
+    <string name="stream">stream</string>
+    <string name="images_activity">Loading Images</string>
+    <string name="welcome_activity">Quic Demo Sample</string>
+    <string name="welcome_introduction_text">欢迎使用Quic Demo，这个程序将使用QUIC协议访问腾讯云CLB提供的8张图片，并显示图片加载所需要的时间。</string>
+    <string name="cronet_load_images_text">使用QUIC加载图片</string>
+    <string name="toolbar_title">Loading Images</string>
+    <string name="images_loaded">Quic加载腾讯云CLB图片共用了 %1$d 纳秒</string>
+
+</resources>
