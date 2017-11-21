@@ -1,12 +1,13 @@
 CLB quic demo
 ===================================
 
-Quic是一种非常先进同时也在快速普及的协议，它能够大幅提升WEB页面的性能（15%以上）。腾讯云CLB（cloud load balance）目前已经在服务端支持了Quic协议，Demo中的图片由腾讯云CLB接入的网站提供。  
-不过目前支持Quic的客户端比较少，这个Demo主要是告诉大家如何在客户端使用Quic协议。  
+[Quic](https://www.chromium.org/quic)是Google提出的使用UDP进行多路传输的协议，它改进了TCP、TLS及HTTP2的部分特性，能够大幅提升WEB传输的性能（15%以上）。
+腾讯云CLB（cloud load balance）目前已经在服务端支持了Quic协议，是国内首家支持Quic协议的云厂商，Demo中的图片由腾讯云CLB接入的网站提供。  
+目前支持Quic的客户端比较少，这个Demo主要是告诉大家如何在客户端使用Quic协议，并对比展示了Quic和HTTP2协议的性能。  
 Demo使用了[Cronet](https://chromium.googlesource.com/chromium/src/+/master/components/cronet?autodive=0%2F%2F)
 ，同时参考了Cronet Sample的代码。
 
-界面比较简单，如下：
+使用界面比较简单，如下：
 
 <img src="https://github.com/tencentyun/clb-quic-demo/blob/master/images/welcome_page.png" width="30%" height="40%"> <img src="https://github.com/tencentyun/clb-quic-demo/blob/master/images/speed_page.png" width="30%" height="40%">
 
