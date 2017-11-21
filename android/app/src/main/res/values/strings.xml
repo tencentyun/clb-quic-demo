@@ -22,9 +22,9 @@
     <string name="stream">stream</string>
     <string name="images_activity">Loading Images</string>
     <string name="welcome_activity">Quic Demo Sample</string>
-    <string name="welcome_introduction_text">欢迎使用Quic Demo，这个程序将使用QUIC协议访问腾讯云CLB提供的8张图片，并显示图片加载所需要的时间。</string>
-    <string name="cronet_load_images_text">使用QUIC加载图片</string>
-    <string name="toolbar_title">Loading Images</string>
-    <string name="images_loaded">Quic加载腾讯云CLB图片共用了 %1$d 纳秒</string>
-
+    <string name="welcome_introduction_text">欢迎使用Quic Demo，这个程序将使用QUIC协议和HTTP2协议访问腾讯云CLB提供的16张图片，并显示图片加载所需要的时间。</string>
+    <string name="cronet_load_images_text">点击按钮查看对比效果</string>
+    <string name="toolbar_title">图片加载中，下拉可以刷新</string>
+    <string name="quic_images_loaded">Quic加载腾讯云CLB图片共用了 %1$d 毫秒</string>
+    <string name="https_images_loaded">Http2加载腾讯云CLB图片共用了 %1$d 毫秒</string>
 </resources>

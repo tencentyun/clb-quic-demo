@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/toolbar"
+        style="@style/CronetSample.TextAppearance.Title"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/cronetsample_primary"
+        android:elevation="@dimen/elevation_header"
+        android:title="@string/images_activity"
+        tools:ignore="UnusedAttribute">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/CronetSample.TextAppearance.Title.Inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            tools:ignore="PrivateResource" />
+
+    </android.support.v7.widget.Toolbar>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <fragment
+        android:id="@+id/quic_fragment"
+        android:name="com.tencent.samples.quic_sample.QuicFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="20" />
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="@color/cronetsample_primary"
+        android:layout_weight="1"/>
+
+    <fragment
+        android:id="@+id/https_fragment"
+        android:name="com.tencent.samples.quic_sample.HttpsFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="20" />
+
+    </LinearLayout>
+    </LinearLayout>

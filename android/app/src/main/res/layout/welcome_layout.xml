@@ -15,6 +15,7 @@
    limitations under the License.
   -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/proto_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -70,6 +71,7 @@
                 android:layout_height="wrap_content"
                 android:onClick="openImages"
                 android:padding="@dimen/spacing_double"
+                android:background="#ffbae4b6"
                 android:text="@string/load_images" />
 
         </LinearLayout>

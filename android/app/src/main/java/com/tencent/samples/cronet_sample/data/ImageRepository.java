@@ -17,6 +17,24 @@ package com.tencent.samples.quic_sample.data;
 
 public class ImageRepository {
     private static String[] imageUrls= {
+            "https://stgwhttp2.kof.qq.com/1.jpg",
+            "https://stgwhttp2.kof.qq.com/2.jpg",
+            "https://stgwhttp2.kof.qq.com/3.jpg",
+            "https://stgwhttp2.kof.qq.com/4.jpg",
+            "https://stgwhttp2.kof.qq.com/5.jpg",
+            "https://stgwhttp2.kof.qq.com/6.jpg",
+            "https://stgwhttp2.kof.qq.com/7.jpg",
+            "https://stgwhttp2.kof.qq.com/8.jpg",
+            "https://stgwhttp2.kof.qq.com/01.jpg",
+            "https://stgwhttp2.kof.qq.com/02.jpg",
+            "https://stgwhttp2.kof.qq.com/03.jpg",
+            "https://stgwhttp2.kof.qq.com/04.jpg",
+            "https://stgwhttp2.kof.qq.com/05.jpg",
+            "https://stgwhttp2.kof.qq.com/06.jpg",
+            "https://stgwhttp2.kof.qq.com/07.jpg",
+            "https://stgwhttp2.kof.qq.com/08.jpg"
+    };
+    /*
             "https://stgwhttps.kof.qq.com/1.jpg",
             "https://stgwhttps.kof.qq.com/2.jpg",
             "https://stgwhttps.kof.qq.com/3.jpg",
@@ -24,9 +42,16 @@ public class ImageRepository {
             "https://stgwhttps.kof.qq.com/5.jpg",
             "https://stgwhttps.kof.qq.com/6.jpg",
             "https://stgwhttps.kof.qq.com/7.jpg",
-            "https://stgwhttps.kof.qq.com/8.jpg"
-
-    };
+            "https://stgwhttps.kof.qq.com/8.jpg",
+            "https://stgwhttps.kof.qq.com/01.jpg",
+            "https://stgwhttps.kof.qq.com/02.jpg",
+            "https://stgwhttps.kof.qq.com/03.jpg",
+            "https://stgwhttps.kof.qq.com/04.jpg",
+            "https://stgwhttps.kof.qq.com/05.jpg",
+            "https://stgwhttps.kof.qq.com/06.jpg",
+            "https://stgwhttps.kof.qq.com/07.jpg",
+            "https://stgwhttps.kof.qq.com/08.jpg"
+     */
 
     public static int numberOfImages() {
         return imageUrls.length;

@@ -145,7 +145,7 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolder> {
                     "****** Cronet Request Completed, status code is " + info.getHttpStatusCode()
                             + ", total received bytes is " + info.getReceivedByteCount());
             // Set the latency
-            ((MainActivity) context).addCronetLatency(stop - start);
+            ((MainActivity) context).addCronetLatency(stop - start, 1);
 
             byte[] byteArray = bytesReceived.toByteArray();
             final Bitmap bimage = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
@@ -177,9 +177,9 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolder> {
             // other information like QUIC server information, HTTP/2 protocol and QUIC protocol.
             cronetEngine = myBuilder
                     .enableHttpCache(CronetEngine.Builder.HTTP_CACHE_DISABLED, 100 * 1024)
-                    .addQuicHint("stgwhttps.kof.qq.com", 443, 443)
+                    //.addQuicHint("stgwhttps.kof.qq.com", 443, 443)
                     .enableHttp2(true)
-                    .enableQuic(true)
+                    //.enableQuic(true)
                     .build();
             //    .setUserAgent("clb_quic_demo")
         }

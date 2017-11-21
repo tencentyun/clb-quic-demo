@@ -36,15 +36,19 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private SwipeRefreshLayout swipeRefreshLayout;
     private AtomicLong cronetLatency = new AtomicLong();
-    private long totalLatency;
-    private long numberOfImages;
+    private long quicTotalLatency;
+    private long numberOfQuicImages;
+    private long http2TotalLatency;
+    private long numberOfHttp2Images;
     private ViewAdapter viewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.images_activity);
+        //setContentView(R.layout.images_activity);
+        setContentView(R.layout.fragment);
         setUpToolbar();
+     /*
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.images_activity_layout);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -53,8 +57,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         loadItems();
+       */
     }
-
+/*
     private void loadItems() {
         numberOfImages = 0;
 
@@ -74,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         onItemsLoadComplete();
 
     }
-
+*/
     private void enableWritingPermissionForLogging() {
         int REQUEST_EXTERNAL_STORAGE = 1;
         String[] PERMISSIONS_STORAGE = {
@@ -110,23 +115,51 @@ public class MainActivity extends AppCompatActivity {
      * This calculates and sets on the UI the latency of loading images with Cronet.
      * @param cronetLatency
      */
-    public void addCronetLatency(final long cronetLatency) {
+    public void addCronetLatency(final long cronetLatency, int type) {
 
-        totalLatency += cronetLatency;
-        numberOfImages++;
+        if (type == 0) {
+            quicTotalLatency += cronetLatency;
+            numberOfQuicImages++;
+        } else {
+            http2TotalLatency += cronetLatency;
+            numberOfHttp2Images++;
+        }
+        android.util.Log.i(TAG,
+                numberOfQuicImages + " Cronet Quic Requests Complete, all: " + ImageRepository.numberOfImages());
+        android.util.Log.i(TAG,
+                numberOfHttp2Images + " Cronet Http2 Requests Complete, all: " + ImageRepository.numberOfImages());
 
-        if (numberOfImages == ImageRepository.numberOfImages()) {
-            final long averageLatency = totalLatency / numberOfImages;
+        if (numberOfQuicImages == ImageRepository.numberOfImages() || numberOfHttp2Images == ImageRepository.numberOfImages()) {
+            final long averageLatency;
+            if (type == 0) {
+                averageLatency = quicTotalLatency / numberOfQuicImages;
+                numberOfQuicImages = 0;
+                quicTotalLatency = 0;
+            } else {
+                averageLatency = http2TotalLatency / numberOfHttp2Images;
+                numberOfHttp2Images = 0;
+                http2TotalLatency = 0;
+            }
             android.util.Log.i(TAG,
                     "All Cronet Requests Complete, the average latency is " + averageLatency);
-            final TextView cronetTime = (TextView) findViewById(R.id.cronet_time_label);
+            final TextView quicTime = (TextView) findViewById(R.id.quic_time_label);
+            final TextView httpsTime = (TextView) findViewById(R.id.https_time_label);
+
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    cronetTime.setText(String.format(getResources()
-                            .getString(R.string.images_loaded), averageLatency));
+                    if (type == 0) {
+                        quicTime.setText(String.format(getResources()
+                                .getString(R.string.quic_images_loaded), averageLatency/1000000));
+                    } else {
+                        httpsTime.setText(String.format(getResources()
+                                .getString(R.string.https_images_loaded), averageLatency/1000000));
+
+                    }
                 }
             });
+
+
             this.cronetLatency.set(averageLatency);
         }
     }
