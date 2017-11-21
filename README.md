@@ -4,12 +4,17 @@ CLB quic demo
 Quic是一种非常先进同时也在快速普及的协议，它能够大幅提升WEB页面的性能（15%以上）。腾讯云CLB（cloud load balance）目前已经在服务端支持了Quic协议，Demo中的图片由腾讯云CLB接入的网站提供。  
 不过目前支持Quic的客户端比较少，这个Demo主要是告诉大家如何在客户端使用Quic协议。  
 Demo使用了[Cronet](https://chromium.googlesource.com/chromium/src/+/master/components/cronet?autodive=0%2F%2F)
-，Google Chromium的开源网络库，同时在Cronet Sample的基础上简单修改，遵循Apache2.0开源许可证发布。
+，同时参考了Cronet Sample的代码。
+
+界面比较简单，如下：
+
+<img src="https://github.com/tencentyun/clb-quic-demo/blob/master/images/welcome_page.png" width="30%" height="40%"> <img src="https://github.com/tencentyun/clb-quic-demo/blob/master/images/speed_page.png" width="30%" height="40%">
 
 ### 如何使用
 ---------------
 1. git clone下载之后直接使用android studio打开即可编译和运行。
 2. 如果需要翻墙，请修改gradle.properties文件，添加相应的代理。
+3. 如果不想编译，也可以直接下载[quic-demo](https://github.com/tencentyun/clb-quic-demo/blob/master/output/app-debug.apk) APK文件安装使用。
 
 ### 如何更新Cronet
 当前版本默认使用了63.0.3203，如果需要更新Cronet，按照如下步骤：
